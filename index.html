@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Store</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body>
+
+  <!-- Cart Drawer -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3>Your Cart <span class="cart-count" id="cartCount">0</span></h3>
+      <button onclick="toggleCart()"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer">
+      <div class="cart-total">
+        <span>Subtotal</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <a href="checkout.html" class="btn-primary btn-block">Checkout</a>
+      <button onclick="toggleCart()" class="btn-outline btn-block">Continue Shopping</button>
+    </div>
+  </aside>
+
+  <!-- Header -->
+  <header>
+    <div class="container header-inner">
+      <a href="index.html" class="logo">
+        <i class="fa-solid fa-bolt"></i>
+        Digital Store
+      </a>
+
+      <div class="search-box">
+        <select id="filterCategory">
+          <option value="all">All</option>
+          <option value="electronics">Electronics</option>
+          <option value="mobiles">Mobiles</option>
+          <option value="appliances">Appliances</option>
+        </select>
+        <input type="text" id="searchInput" placeholder="Search products…">
+        <button><i class="fa-solid fa-search"></i></button>
+      </div>
+
+      <div class="header-actions">
+        <button class="icon-btn" onclick="toggleCart()">
+          <i class="fa-solid fa-cart-shopping"></i>
+          <span class="badge" id="headerCartCount">0</span>
+        </button>
+        <a href="checkout.html" class="btn-primary">Checkout</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-text">
+        <p class="hero-eyebrow">New Arrivals 2025</p>
+        <h1>Next-Level <br><span>Tech Deals</span></h1>
+        <p>Unbeatable prices on electronics, mobiles & appliances.</p>
+        <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now <i class="fa-solid fa-arrow-right"></i></button>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-glow"></div>
+        <i class="fa-solid fa-laptop hero-icon"></i>
+      </div>
+    </div>
+  </section>
+
+  <!-- Category Pills -->
+  <section class="categories container">
+    <button class="pill active" data-cat="all">All Products</button>
+    <button class="pill" data-cat="electronics"><i class="fa-solid fa-tv"></i> Electronics</button>
+    <button class="pill" data-cat="mobiles"><i class="fa-solid fa-mobile-screen"></i> Mobiles</button>
+    <button class="pill" data-cat="appliances"><i class="fa-solid fa-blender"></i> Appliances</button>
+  </section>
+
+  <!-- Products Grid -->
+  <section class="products-section" id="products">
+    <div class="container">
+      <div class="products-grid" id="productsGrid"></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="#" class="logo"><i class="fa-solid fa-bolt"></i> Digital Store</a>
+        <p>Your trusted source for the latest tech at the best prices.</p>
+        <div class="social-links">
+          <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <h5>Shop</h5>
+        <a href="#">Electronics</a>
+        <a href="#">Mobiles</a>
+        <a href="#">Appliances</a>
+      </div>
+      <div class="footer-links">
+        <h5>Help</h5>
+        <a href="#">Contact Us</a>
+        <a href="#">Shipping Policy</a>
+        <a href="#">Returns</a>
+      </div>
+    </div>
+    <div class="footer-bottom container">
+      <p>&copy; 2025 Digital Store. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="JS/products.js"></script>
+  <script src="JS/cart.js"></script>
+  <script src="JS/main.js"></script>
+</body>
+</html>
